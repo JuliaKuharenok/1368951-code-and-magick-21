@@ -18,30 +18,19 @@ const random = function (array) {
   return randomItem;
 };
 
-const wizards = [
-  {
-    name: random(WIZARD_NAMES) + ` ` + random(WIZARD_LASTNAMES),
-    coatColor: random(WIZARD_COATS),
-    eyesColor: random(WIZARD_EYES),
-  },
-  {
-    name: random(WIZARD_NAMES) + ` ` + random(WIZARD_LASTNAMES),
-    coatColor: random(WIZARD_COATS),
-    eyesColor: random(WIZARD_EYES),
-  },
-  {
-    name: random(WIZARD_NAMES) + ` ` + random(WIZARD_LASTNAMES),
-    coatColor: random(WIZARD_COATS),
-    eyesColor: random(WIZARD_EYES),
-  },
-  {
-    name: random(WIZARD_NAMES) + ` ` + random(WIZARD_LASTNAMES),
-    coatColor: random(WIZARD_COATS),
-    eyesColor: random(WIZARD_EYES),
-  }
-];
+const wizards = [];
+let wizardsItem;
 
-for (let i = 0; i < WIZARD_NAMES.length; i++) {
+for (let i = 0; i < 4; i++) {
+  wizardsItem = {
+    name: random(WIZARD_NAMES) + ` ` + random(WIZARD_LASTNAMES),
+    coatColor: random(WIZARD_COATS),
+    eyesColor: random(WIZARD_EYES),
+  };
+  wizards.push(wizardsItem);
+}
+
+for (let i = 0; i < wizards.length; i++) {
   const wizardElement = similarWizardTemplate.cloneNode(true);
   wizardElement.querySelector(`.setup-similar-label`).textContent = wizards[i].name;
   wizardElement.querySelector(`.wizard-coat`).style.fill = wizards[i].coatColor;
