@@ -19,10 +19,9 @@ const random = function (array) {
 };
 
 const wizards = [];
-let wizardsItem;
 
 for (let i = 0; i < 4; i++) {
-  wizardsItem = {
+  const wizardsItem = {
     name: random(WIZARD_NAMES) + ` ` + random(WIZARD_LASTNAMES),
     coatColor: random(WIZARD_COATS),
     eyesColor: random(WIZARD_EYES),
